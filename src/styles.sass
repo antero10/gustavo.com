@@ -1,8 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import "scss/base/variables"
+@import "scss/block/containers"
+
+*
+    &:focus
+        outline: none
 body 
-    background-color: black
-    color: springgreen
-    font-size: 18px
+    background-color: $backgroundColor
+    color: $primary
+    font-size: $medium
     padding: 20px
     line-height: 1.5
     font-family: 'Roboto Mono'
