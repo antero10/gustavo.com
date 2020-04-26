@@ -1,0 +1,8 @@
+#&nbsp;type help for more information
+<div class="container" *ngFor="let command of commands">
+  <p >
+    > {{command.input}}
+    <br/>
+    <span [ngStyle]="{'color': command.highlight ? 'white' : ''}"> {{command.response}} </span>
+  </p>
+</div>
