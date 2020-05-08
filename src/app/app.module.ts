@@ -8,20 +8,32 @@ import { AutofocusDirective } from './directives/autofocus.directive';
 import {FormsModule} from '@angular/forms';
 import { HistoryComponent } from './components/history/history.component';
 import {HistoryService} from './services/history.service';
+import { ProfileComponent } from './components/profile/profile.component';
+import {DynamicComponentService} from './services/dynamic-component.service';
+import { CommandComponent } from './components/command/command.component';
+import {HttpClientModule} from '@angular/common/http';
+import { WorksComponent } from './components/works/works.component';
+import {GithubService} from './services/github.service';
+import {LinkedInService} from './services/linked-in.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputTermComponent,
     AutofocusDirective,
-    HistoryComponent
+    HistoryComponent,
+    ProfileComponent,
+    CommandComponent,
+    WorksComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [HistoryService],
-  bootstrap: [AppComponent]
+  providers: [HistoryService, DynamicComponentService, GithubService, LinkedInService],
+  bootstrap: [AppComponent],
+  entryComponents: [ProfileComponent]
 })
 export class AppModule { }

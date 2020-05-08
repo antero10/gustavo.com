@@ -1,0 +1,7 @@
+<p >
+  > {{command.configuration.commandName}}
+  <br/>
+  <span [ngStyle]="{'color': command.highlight ? 'white' : ''}"> {{command.configuration.response}} </span>
+  <br/>
+  <ng-template #dynamic [ngIf]="command.configuration.dynamicComponent" ></ng-template>
+</p>

@@ -1,4 +1,4 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, Inject, OnDestroy, ViewContainerRef} from '@angular/core';
 import {HistoryService} from '../../services/history.service';
 import {Command} from '../../models/Command';
 import {Subscription} from 'rxjs';
@@ -11,6 +11,7 @@ import {Subscription} from 'rxjs';
 export class HistoryComponent implements OnDestroy {
   commands: Command[];
   subscription: Subscription;
+
 
   constructor(private historyService: HistoryService) {
     this.commands = [];
