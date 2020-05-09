@@ -15,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { WorksComponent } from './components/works/works.component';
 import {GithubService} from './services/github.service';
 import {LinkedInService} from './services/linked-in.service';
+import {GoogleAnalyticsService} from './services/google-analytics.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {LinkedInService} from './services/linked-in.service';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [HistoryService, DynamicComponentService, GithubService, LinkedInService],
+  providers: [HistoryService, DynamicComponentService, GithubService, LinkedInService, GoogleAnalyticsService],
   bootstrap: [AppComponent],
   entryComponents: [ProfileComponent]
 })

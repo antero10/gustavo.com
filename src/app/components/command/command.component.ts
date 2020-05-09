@@ -1,6 +1,7 @@
 import {Component, Inject, Input, OnInit, ViewContainerRef} from '@angular/core';
 import {Command} from '../../models/Command';
 import {DynamicComponentService} from '../../services/dynamic-component.service';
+import {GoogleAnalyticsService} from '../../services/google-analytics.service';
 
 @Component({
   selector: 'app-command',
@@ -12,7 +13,8 @@ export class CommandComponent implements OnInit {
   private service: DynamicComponentService;
 
 
-  constructor(@Inject(DynamicComponentService) service, @Inject(ViewContainerRef) viewContainerRef) {
+  constructor(@Inject(DynamicComponentService) service, @Inject(ViewContainerRef) viewContainerRef,
+              private googleAnalyticsService: GoogleAnalyticsService) {
     this.service = service;
     service.setRootViewContainerRef(viewContainerRef);
   }
@@ -21,6 +23,7 @@ export class CommandComponent implements OnInit {
     if (this.command.configuration.dynamicComponent) {
       this.service.addDynamicComponent(this.command.configuration.dynamicComponent);
     }
+    this.googleAnalyticsService.trackEvent('User Command', 'command', this.command.configuration.commandName).subscribe();
   }
 
 }
