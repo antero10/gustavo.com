@@ -20,10 +20,12 @@ export class CommandComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.command.configuration.dynamicComponent) {
-      this.service.addDynamicComponent(this.command.configuration.dynamicComponent);
+    if (this.command.configuration.commandName) {
+      if (this.command.configuration.dynamicComponent) {
+        this.service.addDynamicComponent(this.command.configuration.dynamicComponent);
+      }
+      this.googleAnalyticsService.trackEvent('User Command', 'command', this.command.configuration.commandName).subscribe();
     }
-    this.googleAnalyticsService.trackEvent('User Command', 'command', this.command.configuration.commandName).subscribe();
   }
 
 }

@@ -17,12 +17,19 @@ export class Command  {
   }
 
   private processCommand(input: string): void  {
-    const matches = input.match( /([a-z]+\s?){2}/gm);
-    if (matches && matches.length === 1) {
-      const configuration = COMMANDS.find(conf => conf.commandName === matches[0].toLowerCase().replace(' ', '_'));
-      if (configuration) {
-        this.highlight = true;
-        this.configuration = configuration;
+    if (input) {
+      const matches = input.match( /([A-z]+\s?){2}/gm);
+      if (matches && matches.length === 1) {
+        const configuration = COMMANDS.find(conf => conf.commandName === matches[0].toLowerCase().replace(' ', '_'));
+        if (configuration) {
+          this.highlight = true;
+          this.configuration = configuration;
+        } else {
+          this.configuration = new Configuration({
+            commandName: input,
+            response: Command.commandNotFound(input),
+          });
+        }
       } else {
         this.configuration = new Configuration({
           commandName: input,
@@ -31,8 +38,8 @@ export class Command  {
       }
     } else {
       this.configuration = new Configuration({
-        commandName: input,
-        response: Command.commandNotFound(input),
+        commandName: null,
+        response: null,
       });
     }
   }
