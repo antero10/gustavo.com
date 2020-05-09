@@ -8,7 +8,8 @@ import {GithubProfile} from '../../interfaces/Github';
   styleUrls: ['./profile.component.sass']
 })
 export class ProfileComponent implements OnInit {
-  private profile: GithubProfile;
+  public profile: GithubProfile;
+
   constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {

@@ -16,6 +16,7 @@ import { WorksComponent } from './components/works/works.component';
 import {GithubService} from './services/github.service';
 import {LinkedInService} from './services/linked-in.service';
 import {GoogleAnalyticsService} from './services/google-analytics.service';
+import { HelpComponent } from './components/help/help.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {GoogleAnalyticsService} from './services/google-analytics.service';
     HistoryComponent,
     ProfileComponent,
     CommandComponent,
-    WorksComponent
+    WorksComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

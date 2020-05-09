@@ -9,7 +9,7 @@ import {Github} from '../../interfaces/Github';
 })
 export class WorksComponent implements OnInit {
 
-  private repos;
+  public repos;
   constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
