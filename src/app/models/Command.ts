@@ -1,5 +1,4 @@
 import {COMMANDS} from './Constants';
-import {ProfileComponent} from '../components/profile/profile.component';
 import {Configuration} from './Configuration';
 
 export class Command  {

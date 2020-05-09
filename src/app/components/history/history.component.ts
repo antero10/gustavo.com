@@ -17,12 +17,20 @@ export class HistoryComponent implements OnDestroy {
     this.commands = [];
     this.subscription = historyService.history$.subscribe(
       command => {
-        this.commands.push(command);
+        if (command.configuration.commandName !== 'clear') {
+          this.commands.push(command);
+        } else {
+          this.clean();
+        }
+
       }
     );
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+  clean(): void {
+    this.commands = [];
   }
 }

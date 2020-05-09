@@ -12,4 +12,8 @@ export class HistoryService {
   addToHistory(command: Command) {
     this.commandAddedSource.next(command);
   }
+
+  cleanHistory() {
+    this.commandAddedSource.next();
+  }
 }

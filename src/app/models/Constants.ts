@@ -23,5 +23,8 @@ export const COMMANDS = [
   new Configuration({
     commandName: 'works',
     dynamicComponent: WorksComponent
+  }),
+  new Configuration({
+    commandName: 'clear'
   })
 ];

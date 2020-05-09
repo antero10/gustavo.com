@@ -9,6 +9,7 @@ import {Command} from '../../models/Command';
 })
 export class InputTermComponent {
 
+
   input: string;
 
   constructor(private historyService: HistoryService) {}
