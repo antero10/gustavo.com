@@ -1,4 +1,3 @@
-import {Component} from '@angular/core';
 import {ConfigurationInterface} from '../interfaces/Configuration';
 
 export class Configuration {
