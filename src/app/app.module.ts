@@ -18,6 +18,7 @@ import {LinkedInService} from './services/linked-in.service';
 import {GoogleAnalyticsService} from './services/google-analytics.service';
 import { HelpComponent } from './components/help/help.component';
 import { Angulartics2Module } from 'angulartics2';
+import { SpaceInvaderComponent } from './components/space-invader/space-invader.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { Angulartics2Module } from 'angulartics2';
     ProfileComponent,
     CommandComponent,
     WorksComponent,
-    HelpComponent
+    HelpComponent,
+    SpaceInvaderComponent
   ],
   imports: [
     BrowserModule,

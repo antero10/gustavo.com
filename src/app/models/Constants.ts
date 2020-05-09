@@ -2,6 +2,7 @@ import {ProfileComponent} from '../components/profile/profile.component';
 import {Configuration} from './Configuration';
 import {WorksComponent} from '../components/works/works.component';
 import {HelpComponent} from '../components/help/help.component';
+import {SpaceInvaderComponent} from '../components/space-invader/space-invader.component';
 export const GITHUB_URL = 'https://api.github.com/users/antero10';
 export const HELP = `profile: Gustavo Sanchez profile <br>
                     works: Projects that i'm proud of<br>`;
@@ -24,5 +25,9 @@ export const COMMANDS = [
   }),
   new Configuration({
     commandName: 'clear'
+  }),
+  new Configuration({
+    commandName: 'space_invader',
+    dynamicComponent: SpaceInvaderComponent
   })
 ];
