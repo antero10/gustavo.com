@@ -18,6 +18,8 @@ import {LinkedInService} from './services/linked-in.service';
 import {GoogleAnalyticsService} from './services/google-analytics.service';
 import { HelpComponent } from './components/help/help.component';
 import { Angulartics2Module } from 'angulartics2';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { Angulartics2Module } from 'angulartics2';
     AppRoutingModule,
     FormsModule,
     Angulartics2Module.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [HistoryService, DynamicComponentService, GithubService, LinkedInService, GoogleAnalyticsService],
   bootstrap: [AppComponent],
