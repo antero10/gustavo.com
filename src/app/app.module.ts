@@ -17,6 +17,7 @@ import {GithubService} from './services/github.service';
 import {LinkedInService} from './services/linked-in.service';
 import {GoogleAnalyticsService} from './services/google-analytics.service';
 import { HelpComponent } from './components/help/help.component';
+import { Angulartics2Module } from 'angulartics2';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { HelpComponent } from './components/help/help.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    Angulartics2Module.forRoot(),
   ],
   providers: [HistoryService, DynamicComponentService, GithubService, LinkedInService, GoogleAnalyticsService],
   bootstrap: [AppComponent],

@@ -1,23 +1,20 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {GOOGLE_ANALYTICS_TRACKING_ID, GOOGLE_ANALYTICS_URL} from '../models/Constants';
+import { Angulartics2 } from 'angulartics2';
+import { v4 as uuidv4 } from 'uuid';
+
 
 @Injectable()
 export class GoogleAnalyticsService {
-
-  constructor(private http: HttpClient) { }
+  private uuid: string;
+  constructor(private http: HttpClient, private angulartics2: Angulartics2) {
+    this.uuid = uuidv4();
+  }
 
   trackEvent(category: string, action: string, label: string) {
-    const data = {
-      v: '1',
-      tid: GOOGLE_ANALYTICS_TRACKING_ID,
-      cid: '555',
-      t: 'event',
-      ec: category,
-      ea: action,
-      el: label,
-      ev: '100',
-    };
-    return this.http.post(GOOGLE_ANALYTICS_URL, data);
+    return this.angulartics2.eventTrack.next({
+      action: 'console',
+      properties: { category, action, label },
+    });
   }
 }

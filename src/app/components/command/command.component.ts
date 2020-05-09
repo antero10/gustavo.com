@@ -24,7 +24,7 @@ export class CommandComponent implements OnInit {
       if (this.command.configuration.dynamicComponent) {
         this.service.addDynamicComponent(this.command.configuration.dynamicComponent);
       }
-      this.googleAnalyticsService.trackEvent('User Command', 'command', this.command.configuration.commandName).subscribe();
+      this.googleAnalyticsService.trackEvent('User Command', 'command', this.command.configuration.commandName);
     }
   }
 
