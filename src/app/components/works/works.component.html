@@ -1,10 +1,12 @@
 <div  *ngFor="let repo of repos" class="container-code code-block">
-  <div>
+
     <p>
-      <a href="{{repo.svn_url}}">{{repo.full_name}}</a>&nbsp;
+      <a href="{{repo.svn_url}}" target="_blank">{{repo.full_name}}</a>&nbsp;
       <b *ngIf="repo.license">{{repo.license.key}}</b>
     </p>
     <br/>
+    <b class="color-gray">{{repo.language}}</b>
+    <br/>
     {{repo.description}}
-  </div>
+
 </div>
