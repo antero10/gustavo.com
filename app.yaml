@@ -1,0 +1,20 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+handlers:
+  - url: /
+    static_files: dist/gustavo/index.html
+    upload: dist/gustavo/index.html
+  - url: /
+    static_dir: dist/gustavo
+
+
+skip_files:
+  - e2e/
+  - node_modules/
+  - src/
+  - ^(.*/)?\..*$
+  - ^(.*/)?.*\.json$
+  - ^(.*/)?.*\.md$
+  - ^(.*/)?.*\.yaml$
+  - ^LICENSE
